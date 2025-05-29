@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Pago Webpay Plus</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-top: 20px; border: 1px solid #ccc; padding: 20px; max-width: 400px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="number"], input[type="text"] { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Iniciar Pago con Webpay Plus</h1>
+    <p>Simulación de compra de un producto en Ferremas.</p>
+
+    <form action="/api/webpay/pay" method="POST">
+        <label for="amount">Monto ($):</label>
+        <input type="number" id="amount" name="amount" value="<%= amount %>" required>
+
+        <label for="buyOrder">Orden de Compra (opcional):</label>
+        <input type="text" id="buyOrder" name="buyOrder" placeholder="Ej: order-12345">
+
+        <button type="submit">Pagar con Webpay Plus</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Exitoso</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .success-message { color: green; font-weight: bold; }
+        pre { background-color: #f0f0f0; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>¡Pago Exitoso!</h1>
+    <p class="success-message">Tu transacción ha sido procesada correctamente.</p>
+
+    <h2>Detalles de la Transacción:</h2>
+    <pre><%= JSON.stringify(result, null, 2) %></pre>
+
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>

@@ -1,0 +1,2808 @@
+{
+	"info": {
+		"_postman_id": "9e8f1a14-d142-4f28-90e8-42af127f7123",
+		"name": "Ferramax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45339844",
+		"_collection_link": "https://hewrek.postman.co/workspace/Hewrek's-Workspace~754a4359-ad3f-4753-8e4a-fabaca298c0d/collection/45339844-9e8f1a14-d142-4f28-90e8-42af127f7123?action=share&source=collection_link&creator=45339844"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los productos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2204"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"89c-678IKQs4V/S2SeeCGIMw9YuL/N8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 May 2025 23:37:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"num_serial\": \"FER-001\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"BOS-123\",\n        \"nombre\": \"Taladro Inalámbrico\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-01T04:00:00.000Z\",\n        \"precio\": \"75990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 2,\n        \"num_serial\": \"FER-002\",\n        \"marca\": \"Stanley\",\n        \"codigo\": \"STA-456\",\n        \"nombre\": \"Martillo de Uña\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-05-15T04:00:00.000Z\",\n        \"precio\": \"15990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 3,\n        \"num_serial\": \"FER-003\",\n        \"marca\": \"Makita\",\n        \"codigo\": \"MAK-789\",\n        \"nombre\": \"Sierra Circular 1200W\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-10T04:00:00.000Z\",\n        \"precio\": \"124990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 4,\n        \"num_serial\": \"FER-004\",\n        \"marca\": \"3M\",\n        \"codigo\": \"3M-321\",\n        \"nombre\": \"Guantes Anticorte\",\n        \"categoria\": \"Equipos de Seguridad\",\n        \"fecha_precio\": \"2023-04-20T04:00:00.000Z\",\n        \"precio\": \"8990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 5,\n        \"num_serial\": \"FER-005\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"BOS-456\",\n        \"nombre\": \"Lijadora Orbital\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-05T04:00:00.000Z\",\n        \"precio\": \"34990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 6,\n        \"num_serial\": \"FER-006\",\n        \"marca\": \"Sika\",\n        \"codigo\": \"SIK-987\",\n        \"nombre\": \"Silicona Transparente\",\n        \"categoria\": \"Fijaciones y Adhesivos\",\n        \"fecha_precio\": \"2023-05-12T04:00:00.000Z\",\n        \"precio\": \"4990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 7,\n        \"num_serial\": \"FER-007\",\n        \"marca\": \"DeWalt\",\n        \"codigo\": \"DEW-741\",\n        \"nombre\": \"Destornillador Eléctrico\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-07-01T04:00:00.000Z\",\n        \"precio\": \"68990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 8,\n        \"num_serial\": \"FER-008\",\n        \"marca\": \"Hilti\",\n        \"codigo\": \"HIL-222\",\n        \"nombre\": \"Medidor Láser 40m\",\n        \"categoria\": \"Equipos de Medición\",\n        \"fecha_precio\": \"2023-06-15T04:00:00.000Z\",\n        \"precio\": \"99990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 9,\n        \"num_serial\": \"FER-009\",\n        \"marca\": \"Ceresita\",\n        \"codigo\": \"CER-678\",\n        \"nombre\": \"Pintura Látex Blanca\",\n        \"categoria\": \"Materiales Básicos\",\n        \"fecha_precio\": \"2023-04-01T03:00:00.000Z\",\n        \"precio\": \"24990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 10,\n        \"num_serial\": \"FER-010\",\n        \"marca\": \"Truper\",\n        \"codigo\": \"TRU-321\",\n        \"nombre\": \"Llave Inglesa 12\\\"\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-18T04:00:00.000Z\",\n        \"precio\": \"19990.00\",\n        \"historial_precio\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener un producto por código",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/BOS-123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"BOS-123"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"dc-XSXFzLUvR7NRsGEyCJ+4kQHLr3U\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 May 2025 23:38:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"num_serial\": \"FER-001\",\n    \"marca\": \"Bosch\",\n    \"codigo\": \"BOS-123\",\n    \"nombre\": \"Taladro Inalámbrico\",\n    \"categoria\": \"Herramientas Manuales\",\n    \"fecha_precio\": \"2023-06-01T04:00:00.000Z\",\n    \"precio\": \"75990.00\",\n    \"historial_precio\": null\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/BOS-12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"BOS-12"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-DoT5ybwMKaDFCElYot58nmw2dVs\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 May 2025 23:39:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Producto no encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Buscar productos por término",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/buscar/Equipos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"buscar",
+								"Equipos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "431"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1af-pKejGeQHjSyymxJCREhuNlGJEKw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 May 2025 23:41:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"num_serial\": \"FER-004\",\n        \"marca\": \"3M\",\n        \"codigo\": \"3M-321\",\n        \"nombre\": \"Guantes Anticorte\",\n        \"categoria\": \"Equipos de Seguridad\",\n        \"fecha_precio\": \"2023-04-20T04:00:00.000Z\",\n        \"precio\": \"8990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 8,\n        \"num_serial\": \"FER-008\",\n        \"marca\": \"Hilti\",\n        \"codigo\": \"HIL-222\",\n        \"nombre\": \"Medidor Láser 40m\",\n        \"categoria\": \"Equipos de Medición\",\n        \"fecha_precio\": \"2023-06-15T04:00:00.000Z\",\n        \"precio\": \"99990.00\",\n        \"historial_precio\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener stock por sucursal",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/stock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"stock",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-qQc4Ej7rWhwN/s84E3sYorMN5Tc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 May 2025 23:48:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cantidad\": 9\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/stock/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"stock",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-2RoIdh215UFHNH9Fmk1LD8vjw2U\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 May 2025 23:48:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Stock no encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Productos con bajo stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/productos/stock/bajo?max=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"stock",
+						"bajo"
+					],
+					"query": [
+						{
+							"key": "max",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/stock/bajo?max=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"stock",
+								"bajo"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-xWMgGSkgdqRFIG6yJcV/vBlsdr4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:00:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"codigo\": \"BOS-123\",\n        \"nombre\": \"Taladro Inalámbrico\",\n        \"marca\": \"Bosch\",\n        \"precio\": \"85000.50\",\n        \"sucursal_id\": 1,\n        \"sucursal_nombre\": \"Sucursal Central\",\n        \"cantidad\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Historial de precios de un producto",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/BOS-123/precios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"BOS-123",
+								"precios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-nzpMnti0slFbr9tMK1VXgjAIQFI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:03:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigo_producto\": \"BOS-123\",\n    \"historial_precios\": [\n        {\n            \"fecha\": \"2025-05-28T00\",\n            \"precio\": 2\n        },\n        {\n            \"fecha\": \"2025-05-28T00\",\n            \"precio\": 3\n        },\n        {\n            \"fecha\": \"2025-05-28T01\",\n            \"precio\": 17\n        }\n    ]\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/FER-001/precios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"FER-001",
+								"precios"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-DoT5ybwMKaDFCElYot58nmw2dVs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:02:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Producto no encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Precios actualizados en una fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/productos/precios/fecha?fecha=2025-05-27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"precios",
+						"fecha"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2025-05-27"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/precios/fecha?fecha=2025-05-27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"precios",
+								"fecha"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2025-05-27"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7b-6vD2HQ9S0N8X/gFl5T+CHjEIuI8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:04:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"codigo\": \"BOS-123\",\n        \"nombre\": \"Taladro Inalámbrico\",\n        \"precio\": \"85000.50\",\n        \"fecha_precio\": \"2025-05-27T04:00:00.000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener todas las sucursales",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sucursales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sucursales"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "777"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"309-ib33AUmshP9XssGziQrKgOYpp4E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 00:11:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Sucursal Central\",\n        \"direccion\": \"Av. Principal 123, Santiago\"\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Sucursal Norte\",\n        \"direccion\": \"Calle 5 N°12, Antofagasta\"\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Sucursal Sur\",\n        \"direccion\": \"Ruta 40 km 20, Puerto Montt\"\n    },\n    {\n        \"id\": 4,\n        \"nombre\": \"Sucursal Oriente\",\n        \"direccion\": \"Av. Los Leones 543, Providencia\"\n    },\n    {\n        \"id\": 5,\n        \"nombre\": \"Sucursal Occidente\",\n        \"direccion\": \"Camino del Mar 111, Viña del Mar\"\n    },\n    {\n        \"id\": 6,\n        \"nombre\": \"Sucursal Maipú\",\n        \"direccion\": \"Av. Pajaritos 300, Maipú\"\n    },\n    {\n        \"id\": 7,\n        \"nombre\": \"Sucursal Ñuñoa\",\n        \"direccion\": \"Irarrázaval 800, Ñuñoa\"\n    },\n    {\n        \"id\": 8,\n        \"nombre\": \"Sucursal Valdivia\",\n        \"direccion\": \"Bueras 210, Valdivia\"\n    },\n    {\n        \"id\": 9,\n        \"nombre\": \"Sucursal Chillán\",\n        \"direccion\": \"Libertad 456, Chillán\"\n    },\n    {\n        \"id\": 10,\n        \"nombre\": \"Sucursal Temuco\",\n        \"direccion\": \"Manuel Montt 99, Temuco\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Autenticación",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"admin\",\r\n    \"contrasena\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"admin\",\r\n    \"contrasena\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "191"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bf-Us6ASXucK3efKAvXBU55l4BMeHE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:06:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Nzk3OSwiZXhwIjoxNzQ4NDAxNTc5fQ.wUBH3KlIja9z9hX0l4iYyt6HE5Y8IqFnbvumSFyggrk\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar precio (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5NDA4MCwiZXhwIjoxNzQ4Mzk3NjgwfQ.KiaVJuGe7rcGA4dYReHZvP2tKkN410h5cyWfCbqlmH8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"precio\": 85000.50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos/1/precio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"1",
+						"precio"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"precio\": 234\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/precio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"precio"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-bsXkt/iuBS3PSFt+56LClqqBzTs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:08:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Precio actualizado\",\n    \"precio_actual\": 234,\n    \"fecha_actualizacion\": \"2025-05-28T02:08:02.439Z\"\n}"
+				},
+				{
+					"name": "401 Unauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"precio\": 234\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/precio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"precio"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:08:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Unauthorized"
+				}
+			]
+		},
+		{
+			"name": "Crear nuevo producto (admin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\": \"NUEVO001\",\r\n    \"nombre\": \"Taladro Profesional\",\r\n    \"marca\": \"Bosch\",\r\n    \"precio\": 89.99,\r\n    \"categoria\": \"Herramientas Eléctricas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"num_serial\": \"test\",\r\n    \"codigo\": \"NUEVO021\",\r\n    \"nombre\": \"Taladro Profesional\",\r\n    \"marca\": \"Bosch\",\r\n    \"precio\": 89.99,\r\n    \"categoria\": \"Herramientas Eléctricas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "300"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12c-43hHE1i2oKcCjjSJDqM1/RvKC/A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 02:43:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Producto creado exitosamente\",\n    \"producto\": {\n        \"id\": 14,\n        \"num_serial\": \"test\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"NUEVO021\",\n        \"nombre\": \"Taladro Profesional\",\n        \"categoria\": \"Herramientas Eléctricas\",\n        \"fecha_precio\": \"2025-05-28T04:00:00.000Z\",\n        \"precio\": \"89.99\",\n        \"historial_precio\": \"2025-05-29T02:43:06.324Z:89.99\"\n    }\n}"
+				},
+				{
+					"name": "401 Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"NUEVO001\",\r\n    \"nombre\": \"Taladro Profesional\",\r\n    \"marca\": \"Bosch\",\r\n    \"precio\": 89.99,\r\n    \"categoria\": \"Herramientas Eléctricas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:12:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Unauthorized"
+				}
+			]
+		},
+		{
+			"name": "Eliminar producto (admin)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"num_serial\": \"FER-011\",\r\n    \"marca\": \"NuevaMarca\",\r\n    \"codigo\": \"NUE-001\",\r\n    \"nombre\": \"Producto de prueba\",\r\n    \"categoria\": \"Herramientas\",\r\n    \"precio\": 19990\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"11"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"12"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12b-n1nirDvyjXmKooMBXmHCCocfDJo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:13:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Producto eliminado exitosamente\",\n    \"producto\": {\n        \"id\": 12,\n        \"num_serial\": \"\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"NUEVO001\",\n        \"nombre\": \"Taladro Profesional\",\n        \"categoria\": \"Herramientas Eléctricas\",\n        \"fecha_precio\": \"2025-05-27T04:00:00.000Z\",\n        \"precio\": \"89.99\",\n        \"historial_precio\": \"2025-05-28T02:11:58.437Z:89.99\"\n    }\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"11"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-DoT5ybwMKaDFCElYot58nmw2dVs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:14:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Producto no encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Listar usuarios registrados (admin)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-6PTHZhtt1GhZJUkShVf0PwnSFPs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:16:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"admin\",\n        \"rol\": \"admin\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Crear nuevo usuario (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Nzk3OSwiZXhwIjoxNzQ4NDAxNTc5fQ.wUBH3KlIja9z9hX0l4iYyt6HE5Y8IqFnbvumSFyggrk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"nuevo_usuario\",\r\n    \"contrasena\": \"clave123\",\r\n    \"rol\": \"cliente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"nuevo_usuario\",\r\n    \"contrasena\": \"clave123\",\r\n    \"rol\": \"cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-gwnlA1ybV8GFUtb8FKFtZh5THhs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:17:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Usuario creado exitosamente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear factura de compra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"producto_id\": 1,\r\n    \"precio_compra\": 19.99,\r\n    \"sucursal_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/facturas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"facturas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"producto_id\": 1,\r\n    \"precio_compra\": 19.99,\r\n    \"sucursal_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facturas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-Ge3MuG4r/Pmwf6qxR0Qslf6T3EQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:20:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Factura creada exitosamente\",\n    \"factura_id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Listar todas las facturas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facturas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "158"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9e-bbENqoHyGjdlNCMCcJSTpV+AZns\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:21:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"fecha_compra\": \"2025-05-27T04:00:00.000Z\",\n        \"precio_compra\": \"19.99\",\n        \"cliente\": \"admin\",\n        \"producto\": \"Taladro Inalámbrico\",\n        \"sucursal\": \"Sucursal Central\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Eliminar factura",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/facturas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"facturas",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-tL3wIXM4snWAU3Y0R1oz8oYT9ZA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:22:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Factura eliminada exitosamente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear sucursal (admin)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Sucursal Centro\",\r\n    \"direccion\": \"Av. Principal 456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sucursales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sucursales"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b-540zjzyTvnMfSxpTm7lI838MMIk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:24:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Sucursal creada exitosamente\",\n    \"sucursal_id\": 11\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar sucursal (admin)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cantidad\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos/1/stock/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"1",
+						"stock",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Sucursal Centro (Actualizada)\",\r\n    \"direccion\": \"Av. Principal 789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sucursales/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sucursales",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-pq3uzAqO1T3wA3LrTvc6CcnGlK8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:26:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Sucursal actualizada exitosamente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar Sucursal(admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Nzk3OSwiZXhwIjoxNzQ4NDAxNTc5fQ.wUBH3KlIja9z9hX0l4iYyt6HE5Y8IqFnbvumSFyggrk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/sucursales/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sucursales",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sucursales/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sucursales",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d-fYbmvokCZ6+4DQwFM0bWmuqvvGw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:38:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Sucursal eliminada exitosamente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear consulta (ej: reclamo o duda)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"asunto\": \"Producto defectuoso\",\r\n    \"mensaje\": \"El taladro no enciende\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/consultas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"consultas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"asunto\": \"Producto defectuoso\",\r\n    \"mensaje\": \"El taladro no enciende\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a-jOR/BQUP4tR/xsB1bRM2V16OS2s\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:28:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Consulta creada exitosamente\",\n    \"consulta_id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Listar todas las consultas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-9prc8EIUsXxKk9d2UNRtwx7sPUE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:29:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"asunto\": \"Producto defectuoso\",\n        \"mensaje\": \"El taladro no enciende\",\n        \"fecha\": \"2025-05-28T02:28:06.000Z\",\n        \"estado\": \"pendiente\",\n        \"usuario_nombre\": \"admin\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Ver estado de una consulta",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/consultas/1/estado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas",
+								"1",
+								"estado"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-o4X0pkl3HlpRi80Xwy23cdYuzDA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:30:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"consulta_id\": \"1\",\n    \"estado\": \"pendiente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar consulta (admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Nzk3OSwiZXhwIjoxNzQ4NDAxNTc5fQ.wUBH3KlIja9z9hX0l4iYyt6HE5Y8IqFnbvumSFyggrk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/consultas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"consultas",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/consultas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d-7MREBzyUGUiqB2r/2Mvbbwhryrs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:31:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Consulta eliminada exitosamente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar stock en sucursal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cantidad\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos/1/stock/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"1",
+						"stock",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidad\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/stock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"stock",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-46upKxx0Zgl4dTPZSbx3etySu3E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 May 2025 02:32:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Stock actualizado. Nueva cantidad: 2\",\n    \"producto_id\": \"1\",\n    \"sucursal_id\": \"1\",\n    \"cantidad\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Dolar Observado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/indicadores/dolar?fecha=2025-05-27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"indicadores",
+						"dolar"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2025-05-27"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Dolar Observado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/indicadores/dolar?fecha=2025-05-27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"indicadores",
+								"dolar"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2025-05-27"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4c-eGJ2GvJQ33sVCcByLyD7CVsBTpY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 00:25:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"moneda\": \"DOLAR\",\n    \"fecha\": \"27-05-2025\",\n    \"valor\": 938.28,\n    \"unidad_medida\": \"CLP\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Precio Obsevado en rango de fecha",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Cambio de Divisas por fechas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/conversion/convert?amount=100&from=USD&to=CLP&date=2025-05-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"conversion",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "100"
+						},
+						{
+							"key": "from",
+							"value": "USD"
+						},
+						{
+							"key": "to",
+							"value": "CLP"
+						},
+						{
+							"key": "date",
+							"value": "2025-05-28"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/conversion/convert?amount=100&from=USD&to=CLP&date=2025-05-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conversion",
+								"convert"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "100"
+								},
+								{
+									"key": "from",
+									"value": "USD"
+								},
+								{
+									"key": "to",
+									"value": "CLP"
+								},
+								{
+									"key": "date",
+									"value": "2025-05-28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52-ytMQ/3nQj2lI5n91Po7xmi3oAJA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 03:22:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"convertedAmount\": 93793,\n    \"rateUsed\": 937.93,\n    \"rateDate\": \"28-05-2025\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Mzk1NiwiZXhwIjoxNzQ4Mzk3NTU2fQ.F-YjJ34xRJae6s1IIX5RmBvcbHda3u_RGz6kLUTEfyU",
+			"type": "string"
+		}
+	]
+}

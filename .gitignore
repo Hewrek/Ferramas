@@ -1,0 +1,6 @@
+# Ignorar dependencias y carpetas de desarrollo
+node_modules/
+
+# Ignorar logs y archivos generados
+*.log
+*.tmp
