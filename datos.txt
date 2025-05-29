@@ -1,3 +1,5 @@
 Caso	Número de Tarjeta	CVV	Resultado
 Aprobada	4051885600446623	Cualquiera (ej: 123)	Transacción exitosa.
 Rechazada	4051885600446620	Cualquiera (ej: 456)	Transacción declinada.
+
+npm install Cors express dotenv transbank-sdk axios ngrok jsonwebtoken
