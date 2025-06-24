@@ -1,0 +1,4266 @@
+{
+	"info": {
+		"_postman_id": "02322dd4-a9ec-4354-9fae-1d3b21973f28",
+		"name": "Ferramax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45343456"
+	},
+	"item": [
+		{
+			"name": "Autenticación",
+			"item": [
+				{
+					"name": "Autenticación",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has required fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.all.keys('message', 'token');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Token is a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.token).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Token should not be empty\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response schema is valid\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.all.keys('message', 'token');\r",
+									"    pm.expect(responseData.message).to.be.a('string');\r",
+									"    pm.expect(responseData.token).to.be.a('string');\r",
+									"});\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Message</th>\r",
+									"        <th>Token</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.message}}</td>\r",
+									"        <td>{{response.token}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() };\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"admin\",\r\n    \"contrasena\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"admin\",\r\n    \"contrasena\": \"admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "191"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bf-Us6ASXucK3efKAvXBU55l4BMeHE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:06:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Nzk3OSwiZXhwIjoxNzQ4NDAxNTc5fQ.wUBH3KlIja9z9hX0l4iYyt6HE5Y8IqFnbvumSFyggrk\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Obtener todos los productos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response is an array with at least one element\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Each object in the array has the required fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"\r",
+									"    responseData.forEach(function(item) {\r",
+									"        pm.expect(item).to.have.all.keys('id', 'num_serial', 'marca', 'codigo', 'nombre', 'categoria', 'fecha_precio', 'precio', 'historial_precio');\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate that 'id' is a non-negative integer and 'precio' is a valid number\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"    responseData.forEach(function(item) {\r",
+									"        pm.expect(item).to.have.property('id').that.is.a('number').and.is.at.least(0);\r",
+									"    });\r",
+									"});\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>ID</th>\r",
+									"        <th>Num Serial</th>\r",
+									"        <th>Marca</th>\r",
+									"        <th>Código</th>\r",
+									"        <th>Nombre</th>\r",
+									"        <th>Categoría</th>\r",
+									"        <th>Fecha Precio</th>\r",
+									"        <th>Precio</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{id}}</td>\r",
+									"            <td>{{num_serial}}</td>\r",
+									"            <td>{{marca}}</td>\r",
+									"            <td>{{codigo}}</td>\r",
+									"            <td>{{nombre}}</td>\r",
+									"            <td>{{categoria}}</td>\r",
+									"            <td>{{fecha_precio}}</td>\r",
+									"            <td>{{precio}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() }\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2204"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"89c-678IKQs4V/S2SeeCGIMw9YuL/N8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 23:37:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"num_serial\": \"FER-001\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"BOS-123\",\n        \"nombre\": \"Taladro Inalámbrico\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-01T04:00:00.000Z\",\n        \"precio\": \"75990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 2,\n        \"num_serial\": \"FER-002\",\n        \"marca\": \"Stanley\",\n        \"codigo\": \"STA-456\",\n        \"nombre\": \"Martillo de Uña\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-05-15T04:00:00.000Z\",\n        \"precio\": \"15990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 3,\n        \"num_serial\": \"FER-003\",\n        \"marca\": \"Makita\",\n        \"codigo\": \"MAK-789\",\n        \"nombre\": \"Sierra Circular 1200W\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-10T04:00:00.000Z\",\n        \"precio\": \"124990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 4,\n        \"num_serial\": \"FER-004\",\n        \"marca\": \"3M\",\n        \"codigo\": \"3M-321\",\n        \"nombre\": \"Guantes Anticorte\",\n        \"categoria\": \"Equipos de Seguridad\",\n        \"fecha_precio\": \"2023-04-20T04:00:00.000Z\",\n        \"precio\": \"8990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 5,\n        \"num_serial\": \"FER-005\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"BOS-456\",\n        \"nombre\": \"Lijadora Orbital\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-05T04:00:00.000Z\",\n        \"precio\": \"34990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 6,\n        \"num_serial\": \"FER-006\",\n        \"marca\": \"Sika\",\n        \"codigo\": \"SIK-987\",\n        \"nombre\": \"Silicona Transparente\",\n        \"categoria\": \"Fijaciones y Adhesivos\",\n        \"fecha_precio\": \"2023-05-12T04:00:00.000Z\",\n        \"precio\": \"4990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 7,\n        \"num_serial\": \"FER-007\",\n        \"marca\": \"DeWalt\",\n        \"codigo\": \"DEW-741\",\n        \"nombre\": \"Destornillador Eléctrico\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-07-01T04:00:00.000Z\",\n        \"precio\": \"68990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 8,\n        \"num_serial\": \"FER-008\",\n        \"marca\": \"Hilti\",\n        \"codigo\": \"HIL-222\",\n        \"nombre\": \"Medidor Láser 40m\",\n        \"categoria\": \"Equipos de Medición\",\n        \"fecha_precio\": \"2023-06-15T04:00:00.000Z\",\n        \"precio\": \"99990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 9,\n        \"num_serial\": \"FER-009\",\n        \"marca\": \"Ceresita\",\n        \"codigo\": \"CER-678\",\n        \"nombre\": \"Pintura Látex Blanca\",\n        \"categoria\": \"Materiales Básicos\",\n        \"fecha_precio\": \"2023-04-01T03:00:00.000Z\",\n        \"precio\": \"24990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 10,\n        \"num_serial\": \"FER-010\",\n        \"marca\": \"Truper\",\n        \"codigo\": \"TRU-321\",\n        \"nombre\": \"Llave Inglesa 12\\\"\",\n        \"categoria\": \"Herramientas Manuales\",\n        \"fecha_precio\": \"2023-06-18T04:00:00.000Z\",\n        \"precio\": \"19990.00\",\n        \"historial_precio\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Obtener un producto por código",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"The 'id' must be a non-negative integer\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.have.property('id');\r",
+									"    pm.expect(responseData.id).to.be.a('number').and.to.be.at.least(0, \"Value should be a non-negative integer\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>ID</th>\r",
+									"        <th>Num Serial</th>\r",
+									"        <th>Marca</th>\r",
+									"        <th>Código</th>\r",
+									"        <th>Nombre</th>\r",
+									"        <th>Categoría</th>\r",
+									"        <th>Fecha Precio</th>\r",
+									"        <th>Precio</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.id}}</td>\r",
+									"        <td>{{response.num_serial}}</td>\r",
+									"        <td>{{response.marca}}</td>\r",
+									"        <td>{{response.codigo}}</td>\r",
+									"        <td>{{response.nombre}}</td>\r",
+									"        <td>{{response.categoria}}</td>\r",
+									"        <td>{{response.fecha_precio}}</td>\r",
+									"        <td>{{response.precio}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/BOS-123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"BOS-123"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/BOS-123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"BOS-123"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "220"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dc-XSXFzLUvR7NRsGEyCJ+4kQHLr3U\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 23:38:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"num_serial\": \"FER-001\",\n    \"marca\": \"Bosch\",\n    \"codigo\": \"BOS-123\",\n    \"nombre\": \"Taladro Inalámbrico\",\n    \"categoria\": \"Herramientas Manuales\",\n    \"fecha_precio\": \"2023-06-01T04:00:00.000Z\",\n    \"precio\": \"75990.00\",\n    \"historial_precio\": null\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/BOS-12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"BOS-12"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-DoT5ybwMKaDFCElYot58nmw2dVs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 23:39:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Producto no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar productos por término",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response is an array with at least one element\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Each product object has the required fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"\r",
+									"    responseData.forEach(product => {\r",
+									"        pm.expect(product).to.have.all.keys('id', 'num_serial', 'marca', 'codigo', 'nombre', 'categoria', 'fecha_precio', 'precio', 'historial_precio');\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate that 'id' is a non-negative integer \", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"\r",
+									"    responseData.forEach(product => {\r",
+									"        pm.expect(product.id).to.be.a('number').and.to.be.at.least(0, \"ID should be a non-negative integer\");\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>ID</th>\r",
+									"        <th>Num Serial</th>\r",
+									"        <th>Marca</th>\r",
+									"        <th>Código</th>\r",
+									"        <th>Nombre</th>\r",
+									"        <th>Categoría</th>\r",
+									"        <th>Fecha Precio</th>\r",
+									"        <th>Precio</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{id}}</td>\r",
+									"            <td>{{num_serial}}</td>\r",
+									"            <td>{{marca}}</td>\r",
+									"            <td>{{codigo}}</td>\r",
+									"            <td>{{nombre}}</td>\r",
+									"            <td>{{categoria}}</td>\r",
+									"            <td>{{fecha_precio}}</td>\r",
+									"            <td>{{precio}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() }\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/buscar/Equipos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"buscar",
+								"Equipos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/buscar/Equipos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"buscar",
+										"Equipos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "431"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1af-pKejGeQHjSyymxJCREhuNlGJEKw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 23:41:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"num_serial\": \"FER-004\",\n        \"marca\": \"3M\",\n        \"codigo\": \"3M-321\",\n        \"nombre\": \"Guantes Anticorte\",\n        \"categoria\": \"Equipos de Seguridad\",\n        \"fecha_precio\": \"2023-04-20T04:00:00.000Z\",\n        \"precio\": \"8990.00\",\n        \"historial_precio\": null\n    },\n    {\n        \"id\": 8,\n        \"num_serial\": \"FER-008\",\n        \"marca\": \"Hilti\",\n        \"codigo\": \"HIL-222\",\n        \"nombre\": \"Medidor Láser 40m\",\n        \"categoria\": \"Equipos de Medición\",\n        \"fecha_precio\": \"2023-06-15T04:00:00.000Z\",\n        \"precio\": \"99990.00\",\n        \"historial_precio\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crear nuevo producto (admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(201);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has a valid Content-Type of application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate the schema of the 'producto' object\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.producto).to.be.an('object');\r",
+									"\r",
+									"    const producto = responseData.producto;\r",
+									"\r",
+									"    pm.expect(producto).to.have.all.keys('id', 'num_serial', 'marca', 'codigo', 'nombre', 'categoria', 'fecha_precio', 'precio', 'historial_precio');\r",
+									"    pm.expect(producto.id).to.be.a('number');\r",
+									"    pm.expect(producto.num_serial).to.be.a('string');\r",
+									"    pm.expect(producto.marca).to.be.a('string');\r",
+									"    pm.expect(producto.codigo).to.be.a('string');\r",
+									"    pm.expect(producto.nombre).to.be.a('string');\r",
+									"    pm.expect(producto.categoria).to.be.a('string');\r",
+									"    pm.expect(producto.fecha_precio).to.be.a('string');\r",
+									"    pm.expect(producto.precio).to.be.a('string');\r",
+									"    pm.expect(producto.historial_precio).to.be.a('string');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"The id must be a non-negative integer\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.producto).to.exist;\r",
+									"    pm.expect(responseData.producto.id).to.be.a('number').that.is.at.least(0);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Mensaje must be a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.mensaje).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+									"});\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>ID</th>\r",
+									"        <th>Num Serial</th>\r",
+									"        <th>Marca</th>\r",
+									"        <th>Código</th>\r",
+									"        <th>Nombre</th>\r",
+									"        <th>Categoría</th>\r",
+									"        <th>Fecha Precio</th>\r",
+									"        <th>Precio</th>\r",
+									"        <th>Historial Precio</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.producto.id}}</td>\r",
+									"        <td>{{response.producto.num_serial}}</td>\r",
+									"        <td>{{response.producto.marca}}</td>\r",
+									"        <td>{{response.producto.codigo}}</td>\r",
+									"        <td>{{response.producto.nombre}}</td>\r",
+									"        <td>{{response.producto.categoria}}</td>\r",
+									"        <td>{{response.producto.fecha_precio}}</td>\r",
+									"        <td>{{response.producto.precio}}</td>\r",
+									"        <td>{{response.producto.historial_precio}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() };\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDcxMjg3MywiZXhwIjoxNzUwNzE2NDczfQ.lP4Q6ZuhEy7YVcR_X-1h5j6_GnOJugVBYvOtDKA3bNM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"NUEVO006\",\r\n    \"nombre\": \"Taladro Profesional\",\r\n    \"marca\": \"Bosch\",\r\n    \"precio\": 89.99,\r\n    \"categoria\": \"Herramientas Eléctricas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"num_serial\": \"test\",\r\n    \"codigo\": \"NUEVO025\",\r\n    \"nombre\": \"Taladro Profesional\",\r\n    \"marca\": \"Bosch\",\r\n    \"precio\": 89.99,\r\n    \"categoria\": \"Herramientas Eléctricas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12c-43hHE1i2oKcCjjSJDqM1/RvKC/A\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 02:43:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Producto creado exitosamente\",\n    \"producto\": {\n        \"id\": 14,\n        \"num_serial\": \"test\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"NUEVO021\",\n        \"nombre\": \"Taladro Profesional\",\n        \"categoria\": \"Herramientas Eléctricas\",\n        \"fecha_precio\": \"2025-05-28T04:00:00.000Z\",\n        \"precio\": \"89.99\",\n        \"historial_precio\": \"2025-05-29T02:43:06.324Z:89.99\"\n    }\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"codigo\": \"NUEVO001\",\r\n    \"nombre\": \"Taladro Profesional\",\r\n    \"marca\": \"Bosch\",\r\n    \"precio\": 89.99,\r\n    \"categoria\": \"Herramientas Eléctricas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:12:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						}
+					]
+				},
+				{
+					"name": "Actualizar precio (admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response matches the expected schema\", function () {\r",
+									"    let responseData;\r",
+									"    try {\r",
+									"        responseData = pm.response.json();\r",
+									"    } catch (e) {\r",
+									"        pm.expect.fail(\"Response is not valid JSON\");\r",
+									"    }\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.all.keys('mensaje', 'precio_actual', 'fecha_actualizacion');\r",
+									"\r",
+									"    pm.expect(responseData.mensaje).to.exist.and.to.be.a('string');\r",
+									"    pm.expect(responseData.precio_actual).to.exist.and.to.be.a('number');\r",
+									"    pm.expect(responseData.fecha_actualizacion).to.exist.and.to.be.a('string');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Precio_actual is a non-negative number\", function () {\r",
+									"    let responseData;\r",
+									"    try {\r",
+									"        responseData = pm.response.json();\r",
+									"    } catch (e) {\r",
+									"        pm.expect.fail(\"Response is not valid JSON\");\r",
+									"    }\r",
+									"    \r",
+									"    pm.expect(responseData).to.have.property('precio_actual').that.is.a('number').and.is.at.least(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Fecha_actualizacion is in a valid date format\", function () {\r",
+									"    let responseData;\r",
+									"    try {\r",
+									"        responseData = pm.response.json();\r",
+									"    } catch (e) {\r",
+									"        pm.expect.fail(\"Response is not valid JSON\");\r",
+									"    }\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.fecha_actualizacion).to.exist;\r",
+									"\r",
+									"    // Regular expression to check for valid date format (YYYY-MM-DD)\r",
+									"    const dateFormat = /^\\d{4}-\\d{2}-\\d{2}$/;\r",
+									"    pm.expect(responseData.fecha_actualizacion).to.match(dateFormat, \"Fecha_actualizacion should be in YYYY-MM-DD format\");\r",
+									"});\r",
+									"\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Mensaje</th>\r",
+									"        <th>Precio Actual</th>\r",
+									"        <th>Fecha Actualizacion</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{mensaje}}</td>\r",
+									"        <td>{{precio_actual}}</td>\r",
+									"        <td>{{fecha_actualizacion}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() };\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDcxNDc4MCwiZXhwIjoxNzUwNzE4MzgwfQ.LIrykH-QvTx7YZqY6YIHP3QTh53jweiQB6P4dMcNgxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"precio\": 85000.50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/precio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"precio"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"precio\": 236\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos/1/precio",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"1",
+										"precio"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-bsXkt/iuBS3PSFt+56LClqqBzTs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:08:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Precio actualizado\",\n    \"precio_actual\": 234,\n    \"fecha_actualizacion\": \"2025-05-28T02:08:02.439Z\"\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"precio\": 234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos/1/precio",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"1",
+										"precio"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:08:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						}
+					]
+				},
+				{
+					"name": "Eliminar producto (admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has a valid JSON structure\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.property('mensaje').that.is.a('string');\r",
+									"    pm.expect(responseData).to.have.property('producto').that.is.an('object');\r",
+									"    \r",
+									"    const producto = responseData.producto;\r",
+									"    pm.expect(producto).to.have.property('id').that.is.a('number');\r",
+									"    pm.expect(producto).to.have.property('num_serial').that.is.a('string');\r",
+									"    pm.expect(producto).to.have.property('marca').that.is.a('string');\r",
+									"    pm.expect(producto).to.have.property('codigo').that.is.a('string');\r",
+									"    pm.expect(producto).to.have.property('nombre').that.is.a('string');\r",
+									"    pm.expect(producto).to.have.property('categoria').that.is.a('string');\r",
+									"    pm.expect(producto).to.have.property('fecha_precio').that.is.a('string');\r",
+									"    pm.expect(producto).to.have.property('precio').that.is.a('string');\r",
+									"    pm.expect(producto).to.have.property('historial_precio').that.is.a('string');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate that the 'producto' object contains all required fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.producto).to.exist;\r",
+									"    \r",
+									"    const producto = responseData.producto;\r",
+									"    pm.expect(producto).to.have.all.keys('id', 'num_serial', 'marca', 'codigo', 'nombre', 'categoria', 'fecha_precio', 'precio', 'historial_precio');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Mensaje must be a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.mensaje).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDcxNDc4MCwiZXhwIjoxNzUwNzE4MzgwfQ.LIrykH-QvTx7YZqY6YIHP3QTh53jweiQB6P4dMcNgxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"num_serial\": \"FER-011\",\r\n    \"marca\": \"NuevaMarca\",\r\n    \"codigo\": \"NUE-001\",\r\n    \"nombre\": \"Producto de prueba\",\r\n    \"categoria\": \"Herramientas\",\r\n    \"precio\": 19990\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos/12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12b-n1nirDvyjXmKooMBXmHCCocfDJo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:13:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Producto eliminado exitosamente\",\n    \"producto\": {\n        \"id\": 12,\n        \"num_serial\": \"\",\n        \"marca\": \"Bosch\",\n        \"codigo\": \"NUEVO001\",\n        \"nombre\": \"Taladro Profesional\",\n        \"categoria\": \"Herramientas Eléctricas\",\n        \"fecha_precio\": \"2025-05-27T04:00:00.000Z\",\n        \"precio\": \"89.99\",\n        \"historial_precio\": \"2025-05-28T02:11:58.437Z:89.99\"\n    }\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"11"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-DoT5ybwMKaDFCElYot58nmw2dVs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:14:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Producto no encontrado\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stock",
+			"item": [
+				{
+					"name": "Obtener stock por sucursal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response contains the required field 'cantidad'\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.property('cantidad');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Cantidad is a non-negative integer\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.cantidad).to.exist;\r",
+									"    pm.expect(responseData.cantidad).to.be.a('number').and.to.be.at.least(0);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response schema matches the expected structure\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.all.keys('cantidad');\r",
+									"    pm.expect(responseData.cantidad).to.exist.and.to.be.a('number');\r",
+									"});\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Cantidad</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    <tr>\r",
+									"        <td>{{response.cantidad}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() };\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/stock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"stock",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/1/stock/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"1",
+										"stock",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e-qQc4Ej7rWhwN/s84E3sYorMN5Tc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 23:48:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cantidad\": 9\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/1/stock/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"1",
+										"stock",
+										"0"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-2RoIdh215UFHNH9Fmk1LD8vjw2U\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 23:48:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Stock no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Productos con bajo stock",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response is an array\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate schema of the objects in the response when not empty\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"    \r",
+									"    if (responseData.length > 0) {\r",
+									"        responseData.forEach(function(item) {\r",
+									"            pm.expect(item).to.be.an('object');\r",
+									"            pm.expect(item).to.have.all.keys('id', 'codigo', 'nombre', 'marca', 'precio', 'sucursal_id', 'sucursal_nombre', 'cantidad');\r",
+									"            pm.expect(item.id).to.be.a('number');\r",
+									"            pm.expect(item.codigo).to.be.a('string');\r",
+									"            pm.expect(item.nombre).to.be.a('string');\r",
+									"            pm.expect(item.marca).to.be.a('string');\r",
+									"            pm.expect(item.precio).to.be.a('string');\r",
+									"            pm.expect(item.sucursal_id).to.be.a('number');\r",
+									"            pm.expect(item.sucursal_nombre).to.be.a('string');\r",
+									"            pm.expect(item.cantidad).to.be.a('number');\r",
+									"        });\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response should be an array of objects with correct fields and data types\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"\r",
+									"    responseData.forEach(item => {\r",
+									"        pm.expect(item).to.be.an('object');\r",
+									"        pm.expect(item).to.have.all.keys('id', 'codigo', 'nombre', 'marca', 'precio', 'sucursal_id', 'sucursal_nombre', 'cantidad');\r",
+									"        \r",
+									"        pm.expect(item.id).to.be.a('number');\r",
+									"        pm.expect(item.codigo).to.be.a('string');\r",
+									"        pm.expect(item.nombre).to.be.a('string');\r",
+									"        pm.expect(item.marca).to.be.a('string');\r",
+									"        pm.expect(item.precio).to.be.a('string');\r",
+									"        pm.expect(item.sucursal_id).to.be.a('number');\r",
+									"        pm.expect(item.sucursal_nombre).to.be.a('string');\r",
+									"        pm.expect(item.cantidad).to.be.a('number');\r",
+									"    });\r",
+									"});\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>ID</th>\r",
+									"        <th>Código</th>\r",
+									"        <th>Nombre</th>\r",
+									"        <th>Marca</th>\r",
+									"        <th>Precio</th>\r",
+									"        <th>Sucursal ID</th>\r",
+									"        <th>Sucursal Nombre</th>\r",
+									"        <th>Cantidad</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{id}}</td>\r",
+									"            <td>{{codigo}}</td>\r",
+									"            <td>{{nombre}}</td>\r",
+									"            <td>{{marca}}</td>\r",
+									"            <td>{{precio}}</td>\r",
+									"            <td>{{sucursal_id}}</td>\r",
+									"            <td>{{sucursal_nombre}}</td>\r",
+									"            <td>{{cantidad}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    var res = pm.response.json();\r",
+									"    return {response: res};\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/stock/bajo?max=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"stock",
+								"bajo"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/stock/bajo?max=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"stock",
+										"bajo"
+									],
+									"query": [
+										{
+											"key": "max",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-xWMgGSkgdqRFIG6yJcV/vBlsdr4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:00:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"codigo\": \"BOS-123\",\n        \"nombre\": \"Taladro Inalámbrico\",\n        \"marca\": \"Bosch\",\n        \"precio\": \"85000.50\",\n        \"sucursal_id\": 1,\n        \"sucursal_nombre\": \"Sucursal Central\",\n        \"cantidad\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Actualizar stock en sucursal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.test('Status code is 200', () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.test('Response time is less than 200ms', () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"// Test for content-type header\r",
+									"pm.test('Content-Type is application/json', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"// Test for response body properties\r",
+									"pm.test('Response body has required properties', () => {\r",
+									"    pm.expect(response).to.have.all.keys('mensaje', 'producto_id', 'sucursal_id', 'cantidad');\r",
+									"});\r",
+									"\r",
+									"// Test for mensaje property\r",
+									"pm.test('Mensaje property is a string', () => {\r",
+									"    pm.expect(response.mensaje).to.be.a('string');\r",
+									"});\r",
+									"\r",
+									"// Test for cantidad property\r",
+									"pm.test('Cantidad property is a number', () => {\r",
+									"    pm.expect(response.cantidad).to.be.a('number');\r",
+									"});\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Mensaje</th>\r",
+									"        <th>Producto ID</th>\r",
+									"        <th>Sucursal ID</th>\r",
+									"        <th>Cantidad</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.mensaje}}</td>\r",
+									"        <td>{{response.producto_id}}</td>\r",
+									"        <td>{{response.sucursal_id}}</td>\r",
+									"        <td>{{response.cantidad}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidad\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/stock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"stock",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cantidad\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos/1/stock/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"1",
+										"stock",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-46upKxx0Zgl4dTPZSbx3etySu3E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:32:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Stock actualizado. Nueva cantidad: 2\",\n    \"producto_id\": \"1\",\n    \"sucursal_id\": \"1\",\n    \"cantidad\": 2\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Precios",
+			"item": [
+				{
+					"name": "Historial de precios de un producto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.test('Status code is 200', () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.test('Response time is less than 200ms', () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"// Test for presence of codigo_producto\r",
+									"pm.test('codigo_producto exists', () => {\r",
+									"    pm.expect(response.codigo_producto).to.exist;\r",
+									"    pm.expect(response.codigo_producto).to.be.a('string');\r",
+									"});\r",
+									"\r",
+									"// Test for historial_precios array structure\r",
+									"pm.test('historial_precios is an array', () => {\r",
+									"    pm.expect(response.historial_precios).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Test for each item in historial_precios\r",
+									"response.historial_precios.forEach(item => {\r",
+									"    pm.test('Each historial_precios item has fecha and precio', () => {\r",
+									"        pm.expect(item.fecha).to.exist;\r",
+									"        pm.expect(item.fecha).to.be.a('string');\r",
+									"        pm.expect(item.precio).to.exist;\r",
+									"        pm.expect(item.precio).to.be.a('number');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/BOS-123/precios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"BOS-123",
+								"precios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/BOS-123/precios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"BOS-123",
+										"precios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-nzpMnti0slFbr9tMK1VXgjAIQFI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:03:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"codigo_producto\": \"BOS-123\",\n    \"historial_precios\": [\n        {\n            \"fecha\": \"2025-05-28T00\",\n            \"precio\": 2\n        },\n        {\n            \"fecha\": \"2025-05-28T00\",\n            \"precio\": 3\n        },\n        {\n            \"fecha\": \"2025-05-28T01\",\n            \"precio\": 17\n        }\n    ]\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/FER-001/precios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"FER-001",
+										"precios"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-DoT5ybwMKaDFCElYot58nmw2dVs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:02:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Producto no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Precios actualizados en una fecha",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.test('Status code is 200', () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.test('Response time is less than 200ms', () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/precios/fecha?fecha=2025-05-27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"precios",
+								"fecha"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2025-05-27"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/productos/precios/fecha?fecha=2025-05-27",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"precios",
+										"fecha"
+									],
+									"query": [
+										{
+											"key": "fecha",
+											"value": "2025-05-27"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7b-6vD2HQ9S0N8X/gFl5T+CHjEIuI8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:04:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"codigo\": \"BOS-123\",\n        \"nombre\": \"Taladro Inalámbrico\",\n        \"precio\": \"85000.50\",\n        \"fecha_precio\": \"2025-05-27T04:00:00.000Z\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sucursales",
+			"item": [
+				{
+					"name": "Obtener todas las sucursales",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Check for status code\r",
+									"pm.expect(pm.response.code).to.equal(200);\r",
+									"\r",
+									"// Check for response time\r",
+									"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"\r",
+									"// Validate Content-Type header\r",
+									"pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"\r",
+									"// Check if the response is an array\r",
+									"pm.expect(response).to.be.an('array');\r",
+									"\r",
+									"// Loop through the array and validate each object\r",
+									"response.forEach(item => {\r",
+									"    pm.expect(item).to.have.all.keys('id', 'nombre', 'direccion');\r",
+									"    pm.expect(item.id).to.be.a('number');\r",
+									"    pm.expect(item.nombre).to.be.a('string');\r",
+									"    pm.expect(item.direccion).to.be.a('string');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains at least one element in the array\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Each 'id' is a non-negative integer\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"    responseData.forEach(function(item) {\r",
+									"        pm.expect(item.id).to.be.a('number').and.to.be.at.least(0);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"The 'nombre' field must be a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"    responseData.forEach(function(item) {\r",
+									"        pm.expect(item.nombre).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"The direccion must be a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;\r",
+									"    \r",
+									"    responseData.forEach(function(item) {\r",
+									"        pm.expect(item.direccion).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 2000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sucursales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sucursales"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/sucursales",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"sucursales"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "777"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"309-ib33AUmshP9XssGziQrKgOYpp4E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 00:11:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Sucursal Central\",\n        \"direccion\": \"Av. Principal 123, Santiago\"\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Sucursal Norte\",\n        \"direccion\": \"Calle 5 N°12, Antofagasta\"\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Sucursal Sur\",\n        \"direccion\": \"Ruta 40 km 20, Puerto Montt\"\n    },\n    {\n        \"id\": 4,\n        \"nombre\": \"Sucursal Oriente\",\n        \"direccion\": \"Av. Los Leones 543, Providencia\"\n    },\n    {\n        \"id\": 5,\n        \"nombre\": \"Sucursal Occidente\",\n        \"direccion\": \"Camino del Mar 111, Viña del Mar\"\n    },\n    {\n        \"id\": 6,\n        \"nombre\": \"Sucursal Maipú\",\n        \"direccion\": \"Av. Pajaritos 300, Maipú\"\n    },\n    {\n        \"id\": 7,\n        \"nombre\": \"Sucursal Ñuñoa\",\n        \"direccion\": \"Irarrázaval 800, Ñuñoa\"\n    },\n    {\n        \"id\": 8,\n        \"nombre\": \"Sucursal Valdivia\",\n        \"direccion\": \"Bueras 210, Valdivia\"\n    },\n    {\n        \"id\": 9,\n        \"nombre\": \"Sucursal Chillán\",\n        \"direccion\": \"Libertad 456, Chillán\"\n    },\n    {\n        \"id\": 10,\n        \"nombre\": \"Sucursal Temuco\",\n        \"direccion\": \"Manuel Montt 99, Temuco\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Actualizar sucursal (admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Parse the response JSON\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for a successful status code\r",
+									"pm.test('Status code is 200', () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.test('Response time is less than 200ms', () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"// Test for content type in response headers\r",
+									"pm.test('Content-Type is application/json', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"// Test for the presence of the mensaje field in the response body\r",
+									"pm.test('Response body contains mensaje field', () => {\r",
+									"    pm.expect(response).to.have.property('mensaje');\r",
+									"});\r",
+									"\r",
+									"// Test for the mensaje field being a string\r",
+									"pm.test('mensaje field is a string', () => {\r",
+									"    pm.expect(response.mensaje).to.be.a('string');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDY5OTE4NywiZXhwIjoxNzUwNzAyNzg3fQ.NBUmKcSjXSV60t0Qb8Zc7f9oQQ39jXwEdhK4mHp5i60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidad\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/1/stock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"stock",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Sucursal Centro (Actualizada)\",\r\n    \"direccion\": \"Av. Principal 789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/sucursales/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"sucursales",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-pq3uzAqO1T3wA3LrTvc6CcnGlK8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:26:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Sucursal actualizada exitosamente\"\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Sucursal Centro (Actualizada)\",\r\n    \"direccion\": \"Av. Principal 789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/sucursales/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"sucursales",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-pq3uzAqO1T3wA3LrTvc6CcnGlK8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:26:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Sucursal actualizada exitosamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar Sucursal(admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.test('Status code is 200', () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.test('Response time is less than 200ms', () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"// Test for Content-Type header\r",
+									"pm.test('Content-Type is application/json', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"// Test for presence of mensaje field in response\r",
+									"pm.test('Response contains mensaje field', () => {\r",
+									"    pm.expect(response).to.have.property('mensaje');\r",
+									"});\r",
+									"\r",
+									"// Test for mensaje field value type\r",
+									"pm.test('mensaje field is a string', () => {\r",
+									"    pm.expect(response.mensaje).to.be.a('string');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDY5OTE4NywiZXhwIjoxNzUwNzAyNzg3fQ.NBUmKcSjXSV60t0Qb8Zc7f9oQQ39jXwEdhK4mHp5i60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sucursales/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sucursales",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/sucursales/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"sucursales",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-fYbmvokCZ6+4DQwFM0bWmuqvvGw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:38:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Sucursal eliminada exitosamente\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/sucursales/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"sucursales",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-fYbmvokCZ6+4DQwFM0bWmuqvvGw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:38:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Sucursal eliminada exitosamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Crear sucursal (admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.expect(pm.response.code).to.equal(201);\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"\r",
+									"// Test for content-type header\r",
+									"pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"\r",
+									"// Test for response body properties\r",
+									"pm.expect(response).to.have.property('mensaje');\r",
+									"pm.expect(response.mensaje).to.be.a('string');\r",
+									"pm.expect(response).to.have.property('sucursal_id');\r",
+									"pm.expect(response.sucursal_id).to.be.a('number');\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDY5OTE4NywiZXhwIjoxNzUwNzAyNzg3fQ.NBUmKcSjXSV60t0Qb8Zc7f9oQQ39jXwEdhK4mHp5i60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sucursales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sucursales"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Sucursal Centro\",\r\n    \"direccion\": \"Av. Principal 456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/sucursales",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"sucursales"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-540zjzyTvnMfSxpTm7lI838MMIk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:24:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Sucursal creada exitosamente\",\n    \"sucursal_id\": 11\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar usuarios registrados (admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.expect(pm.response.code).to.equal(200);\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"\r",
+									"// Test for response content type\r",
+									"pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"\r",
+									"// Test for response body structure\r",
+									"pm.expect(response).to.be.an('array').that.is.not.empty;\r",
+									"\r",
+									"// Loop through each item in the response array\r",
+									"response.forEach(item => {\r",
+									"    pm.expect(item).to.have.all.keys('id', 'nombre', 'rol');\r",
+									"    pm.expect(item.id).to.be.a('number');\r",
+									"    pm.expect(item.nombre).to.be.a('string');\r",
+									"    pm.expect(item.rol).to.be.a('string');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDczMTgwMiwiZXhwIjoxNzUwNzM1NDAyfQ.E3q94_35e61LeNaTV5Xpfu5abzpwto3737SPuAVhV7Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-6PTHZhtt1GhZJUkShVf0PwnSFPs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:16:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"admin\",\n        \"rol\": \"admin\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crear nuevo usuario (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Nzk3OSwiZXhwIjoxNzQ4NDAxNTc5fQ.wUBH3KlIja9z9hX0l4iYyt6HE5Y8IqFnbvumSFyggrk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"nuevo_usuario\",\r\n    \"contrasena\": \"clave123\",\r\n    \"rol\": \"cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"nuevo_usuario\",\r\n    \"contrasena\": \"clave123\",\r\n    \"rol\": \"cliente\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"usuarios"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-gwnlA1ybV8GFUtb8FKFtZh5THhs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:17:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Usuario creado exitosamente\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Facturas",
+			"item": [
+				{
+					"name": "Listar todas las facturas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.test('Status code is 200', () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response time\r",
+									"pm.test('Response time is less than 200ms', () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response body format\r",
+									"pm.test('Response body is an array', () => {\r",
+									"    pm.expect(response).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Test for array elements\r",
+									"response.forEach(item => {\r",
+									"    pm.test('Each item has required fields', () => {\r",
+									"        pm.expect(item).to.have.property('id');\r",
+									"        pm.expect(item).to.have.property('fecha_compra');\r",
+									"        pm.expect(item).to.have.property('precio_compra');\r",
+									"        pm.expect(item).to.have.property('cliente');\r",
+									"        pm.expect(item).to.have.property('producto');\r",
+									"        pm.expect(item).to.have.property('sucursal');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/facturas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"facturas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "158"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9e-bbENqoHyGjdlNCMCcJSTpV+AZns\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:21:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"fecha_compra\": \"2025-05-27T04:00:00.000Z\",\n        \"precio_compra\": \"19.99\",\n        \"cliente\": \"admin\",\n        \"producto\": \"Taladro Inalámbrico\",\n        \"sucursal\": \"Sucursal Central\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crear factura de compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"producto_id\": 1,\r\n    \"precio_compra\": 19.99,\r\n    \"sucursal_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facturas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"producto_id\": 1,\r\n    \"precio_compra\": 19.99,\r\n    \"sucursal_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/facturas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"facturas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-Ge3MuG4r/Pmwf6qxR0Qslf6T3EQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:20:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Factura creada exitosamente\",\n    \"factura_id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar factura",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/facturas/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"facturas",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-tL3wIXM4snWAU3Y0R1oz8oYT9ZA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:22:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Factura eliminada exitosamente\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Consultas",
+			"item": [
+				{
+					"name": "Crear consulta (ej: reclamo o duda)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"asunto\": \"Producto defectuoso\",\r\n    \"mensaje\": \"El taladro no enciende\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario_id\": 1,\r\n    \"asunto\": \"Producto defectuoso\",\r\n    \"mensaje\": \"El taladro no enciende\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/consultas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"consultas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-jOR/BQUP4tR/xsB1bRM2V16OS2s\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:28:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Consulta creada exitosamente\",\n    \"consulta_id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Listar todas las consultas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/consultas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"consultas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-9prc8EIUsXxKk9d2UNRtwx7sPUE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:29:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"asunto\": \"Producto defectuoso\",\n        \"mensaje\": \"El taladro no enciende\",\n        \"fecha\": \"2025-05-28T02:28:06.000Z\",\n        \"estado\": \"pendiente\",\n        \"usuario_nombre\": \"admin\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Ver estado de una consulta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/consultas/1/estado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas",
+								"1",
+								"estado"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/consultas/1/estado",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"consultas",
+										"1",
+										"estado"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-o4X0pkl3HlpRi80Xwy23cdYuzDA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:30:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"consulta_id\": \"1\",\n    \"estado\": \"pendiente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar consulta (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Nzk3OSwiZXhwIjoxNzQ4NDAxNTc5fQ.wUBH3KlIja9z9hX0l4iYyt6HE5Y8IqFnbvumSFyggrk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/consultas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/consultas/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"consultas",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-7MREBzyUGUiqB2r/2Mvbbwhryrs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 02:31:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Consulta eliminada exitosamente\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dolar Observado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/indicadores/dolar?fecha=2025-05-27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"indicadores",
+						"dolar"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2025-05-27"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Dolar Observado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/indicadores/dolar?fecha=2025-05-27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"indicadores",
+								"dolar"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2025-05-27"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4c-eGJ2GvJQ33sVCcByLyD7CVsBTpY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 00:25:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"moneda\": \"DOLAR\",\n    \"fecha\": \"27-05-2025\",\n    \"valor\": 938.28,\n    \"unidad_medida\": \"CLP\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Precio Obsevado en rango de fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambio de Divisas por fechas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/conversion/convert?amount=100&from=USD&to=CLP&date=2025-05-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"conversion",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "100"
+						},
+						{
+							"key": "from",
+							"value": "USD"
+						},
+						{
+							"key": "to",
+							"value": "CLP"
+						},
+						{
+							"key": "date",
+							"value": "2025-05-28"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/conversion/convert?amount=100&from=USD&to=CLP&date=2025-05-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conversion",
+								"convert"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "100"
+								},
+								{
+									"key": "from",
+									"value": "USD"
+								},
+								{
+									"key": "to",
+									"value": "CLP"
+								},
+								{
+									"key": "date",
+									"value": "2025-05-28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52-ytMQ/3nQj2lI5n91Po7xmi3oAJA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 03:22:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"convertedAmount\": 93793,\n    \"rateUsed\": 937.93,\n    \"rateDate\": \"28-05-2025\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc1MDcxMjM1MywiZXhwIjoxNzUwNzE1OTUzfQ.p3nOM873N_h73AEaNTBgspXSl1C5MSKEwJr0WeGALJg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiYWRtaW4iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0ODM5Mzk1NiwiZXhwIjoxNzQ4Mzk3NTU2fQ.F-YjJ34xRJae6s1IIX5RmBvcbHda3u_RGz6kLUTEfyU",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,198 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.navbar {
+    background-color: #2c3e50;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #34495e;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Filtros */
+.filter-section {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.filter-section select, 
+.filter-section input[type="number"],
+.filter-section input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.filter-section label {
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+/* Info dólar */
+.dolar-info {
+    background: #e8f4fd;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.dolar-info p {
+    margin: 0;
+}
+
+/* Lista de productos */
+.product-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.producto-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+}
+
+.producto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.producto-info h3 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.marca {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.codigo {
+    color: #3498db;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.precio {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.stock {
+    color: #27ae60;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.categoria {
+    color: #9b59b6;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.producto-info button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.producto-info button:hover {
+    background-color: #2980b9;
+}
+
+/* Mensajes de error y carga */
+.error {
+    color: #e74c3c;
+    padding: 20px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.no-productos {
+    text-align: center;
+    color: #7f8c8d;
+    grid-column: 1 / -1;
+}
+
+#loading {
+    text-align: center;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Conversor de moneda */
+/* Botón de cambio de moneda */
+#toggle-currency {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#toggle-currency:hover {
+    background-color: #2980b9;
+}
+
+.precio-usd {
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+}

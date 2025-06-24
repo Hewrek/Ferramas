@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Eléctricos</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Inicio</a>
+    </div>
+
+    <div class="container">
+        <h1>Bienvenido a Ferramax</h1>
+        <p>Encuentra aquí los mejores productos eléctricos y herramientas.</p>
+
+        <div class="filter-section">
+            <h2>Filtrar productos</h2>
+            <select id="filtrado" onchange="filtrarProductos()">
+                <option value="todos">Todos</option>
+                <option value="menor-mayor">Menor Precio</option>
+                <option value="mayor-menor">Mayor Precio</option>
+            </select>
+            <label for="precio">Precio máximo:</label>
+            
+            <label for="sucursal">Sucursal:</label>
+            <select id="sucursal" onchange="filtrarProductos()">
+                <option value="0">Todas</option>
+                <!-- Se llena dinámicamente desde la API -->
+            </select>
+
+            <h2>Buscar productos</h2>
+            <input type="text" id="busqueda" placeholder="Nombre o Término" onkeyup="buscarProductos()">
+        </div>
+
+        <!-- Agrega esto en el div .dolar-info -->
+        <div class="dolar-info">
+            <p>Valor Dólar hoy: <span id="valor-dolar">Cargando...</span></p>
+            <button id="toggle-currency" onclick="toggleCurrency()">Mostrar precios en USD</button>
+        </div>
+        
+        <h2>Productos</h2>
+        <div id="loading" style="display: none;">Cargando productos...</div>
+        <ul id="productos-lista" class="product-list">
+            <!-- Productos se renderizan dinámicamente -->
+        </ul>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
