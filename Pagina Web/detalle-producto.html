@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto - Ferramax</title>
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html">Inicio</a>
+    </div>
+
+    <div class="container">
+        <div id="loading" class="loading">Cargando detalles del producto...</div>
+        
+        <div id="producto-detalle" class="producto-detalle" style="display: none;">
+            <div class="producto-header">
+                <h1 id="producto-nombre"></h1>
+                <p class="marca" id="producto-marca"></p>
+                <p class="codigo" id="producto-codigo"></p>
+            </div>
+
+            <div class="precio-section">
+                <span class="precio-label">Precio:</span>
+                <span class="precio" id="producto-precio"></span>
+                <button id="toggle-currency" class="btn-moneda">Mostrar en USD</button>
+            </div>
+
+            <div class="producto-content">
+                <div class="producto-imagen-container">
+                    <div id="producto-imagen" class="producto-imagen"></div>
+                </div>
+
+                <div class="producto-info">
+
+                    <div class="stock-section">
+                        <h3>Disponibilidad en sucursales</h3>
+                        <ul id="stock-sucursales" class="stock-list"></ul>
+                    </div>
+
+                    <div class="categoria-section">
+                        <span class="categoria-label">Categoría:</span>
+                        <span class="categoria" id="producto-categoria"></span>
+                    </div>
+
+                    <div class="actions">
+                        <button id="btn-comprar" class="btn-comprar">Comprar</button>
+                        <button id="btn-volver" class="btn-volver">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-tabs">
+                <div class="tabs-header">
+                    <button class="tab-link active" data-tab="informacion-tecnica">Información Técnica</button>
+                </div>
+
+                <div id="informacion-tecnica" class="tab-content active">
+                    <p>Información técnica no disponible actualmente.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;">
+            <p>No se pudo cargar la información del producto.</p>
+            <button id="btn-volver-error" class="btn-volver">Volver al listado</button>
+        </div>
+    </div>
+
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

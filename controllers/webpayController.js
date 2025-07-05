@@ -8,28 +8,32 @@ const renderPaymentForm = (req, res) => {
 
 // Controlador para iniciar el pago
 const initiatePayment = async (req, res) => {
-    const { amount, buyOrder } = req.body;
-
-    // TODO: La URL de retorno DEBE ser HTTPS y accesible públicamente (ej. con ngrok en desarrollo)
-    // En producción, usa la URL real de tu dominio.
-    const returnUrl = 'https://da3b-201-189-213-230.ngrok-free.app/api/webpay/result'; // ¡ACTUALIZA ESTA URL!
-
-    if (!amount || isNaN(amount) || parseInt(amount) <= 0) {
-        return res.status(400).render('failure', { error: 'Monto de pago inválido.' });
-    }
-
     try {
-        const { success, response, error } = await webpayService.createTransaction(amount, buyOrder, returnUrl);
+        const { amount, buyOrder } = req.body;
+
+        // Validación del monto
+        if (!amount || isNaN(amount)) {
+            return res.status(400).json({ error: "Monto inválido" });
+        }
+
+        // URL de retorno 
+        const returnUrl = "https://0cb6-201-189-206-9.ngrok-free.app/api/webpay/result";
+
+        // Crear transacción en WebPay
+        const { success, response, error } = await webpayService.createTransaction(
+            amount, 
+            buyOrder, 
+            returnUrl
+        );
 
         if (success) {
-            // console.log('WebPay Response:', response); // Para depuración
-            res.redirect(response.url + '?token_ws=' + response.token); // Redirige a WebPay
+            res.json({ url: response.url + "?token_ws=" + response.token });
         } else {
-            res.status(500).render('failure', { error: error });
+            res.status(500).json({ error: error || "Error al crear transacción" });
         }
     } catch (err) {
-        console.error('Error en initiatePayment:', err);
-        res.status(500).render('failure', { error: 'Error interno al iniciar el pago.' });
+        console.error("Error en initiatePayment:", err); // 👈 ¡Revisa este log!
+        res.status(500).json({ error: "Error interno del servidor" });
     }
 };
 
@@ -44,12 +48,7 @@ const handlePaymentResult = async (req, res) => {
         token_ws = req.query.token_ws;
     }
 
-    // Como una medida de seguridad adicional, aunque menos común para este flujo,
-    // podríamos buscar en req.params si el token se pasara como parte de la ruta.
-    // Aunque para Transbank usualmente es body o query.
-    // if (!token_ws && req.params.token_ws) {
-    //     token_ws = req.params.token_ws;
-    // }
+
 
     if (!token_ws) {
         // Añadimos un console.error para depuración, para saber por qué no se encontró el token

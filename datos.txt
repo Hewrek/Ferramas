@@ -1,3 +1,8 @@
 Caso	Número de Tarjeta	CVV	Resultado
 Aprobada	4051885600446623	Cualquiera (ej: 123)	Transacción exitosa.
 Rechazada	4051885600446620	Cualquiera (ej: 456)	Transacción declinada.
+
+Para fecha en WebPay poner una fecha siempre futura a la actual (ej:11/28)
+
+Rut             Contraseña
+11.111.111-1    123
