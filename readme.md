@@ -3,7 +3,7 @@ En una terminal, ejecuta npm install express. Si encuentras errores de dependenc
 
 Bash
 
-npm install cors dotenv ejs express jsonwebtoken mysql2 transbank-sdk xml2js
+npm install cors dotenv ejs express jsonwebtoken mysql2 transbank-sdk
 Instala Ngrok ejecutando en la terminal: choco install ngrok.
 
 Abre XAMPP y enciende "Apache" y "MySQL". En la línea de "MySQL", haz clic en "Admin" y crea una base de datos con el nombre ferramax.
