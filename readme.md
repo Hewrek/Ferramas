@@ -1,5 +1,5 @@
 Guía de Ejecución
-En una terminal, ejecuta npm install express. Si encuentras errores de dependencias, usa el siguiente comando para instalarlas todas: npm install cors dotenv ejs express jsonwebtoken mysql2 transbank-sdk xml2js
+En una terminal, ejecuta npm install express. Si encuentras errores de dependencias, usa el siguiente comando para instalarlas todas: npm install cors dotenv ejs express jsonwebtoken mysql2 transbank-sdk
 
 Bash
 
